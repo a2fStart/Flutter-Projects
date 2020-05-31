@@ -98,12 +98,12 @@ class _EventListState extends State<EventList> {
       Favourite favourite = favourites
         .firstWhere((Favourite f) => (f.eventId == ed.id));
       String favId = favourite.id;
-      await FirestoreHelper.deleteFavourite(favId);
+      await FireStoreHelper.deleteFavourite(favId);
     }
     else {
-      await FirestoreHelper.addFavourite(ed, widget.uid);
+      await FireStoreHelper.addFavourite(ed, widget.uid);
     }
-    List<Favourite> updatedFavourites = await FirestoreHelper.getUserFavourites(widget.uid);
+    List<Favourite> updatedFavourites = await FireStoreHelper.getUserFavourites(widget.uid);
     setState(() {
       favourites = updatedFavourites;
     });
